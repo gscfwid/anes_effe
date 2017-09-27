@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h3 style="text-align:center">绩效统计</h3>
+<div class="table-responsive" style="background:white;">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>级别</th>
+				<th>助手</th>
+				<th>总开台次数</th>
+				<th>总管理时间</th>
+				<th>总超时时间</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for item in posts %}
+			<tr>
+				<td>{{item['username']}}</td>
+				<th>{{item['grade']}}</th>
+				<th>{{item['assistant']}}</th>
+				<th>{{item['sum_start']}}</th>
+				<th>{{item['sum_mana']}}</th>
+				<th>{{item['sum_beyond']}}</th>
+			</tr>
+		{% endfor %}
+		</tbody>
+</table>
+</div>
+
+{% endblock %}

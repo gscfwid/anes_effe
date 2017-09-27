@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>SYSUANE</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link href="../default.css" rel="stylesheet" type="text/css" /> -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style type="text/css">
+     body{
+         background: #CCC
+     }
+       html{font-size:11px;}
+     fieldset{width:520px; margin: 0 auto;}
+     legend{font-weight:bold; font-size:14px;}
+     label{float:left; width:100px; margin-left:10px;}
+     .left{margin-left:80px;}
+     .input{width:150px;}
+     span{color: #666666;}
+
+  </style>
+</head>
+<body>
+	<h1>麻醉绩效登记系统</h1>
+	<div class="navbar navbar-inverse" role="navigation">
+	  <div class="navbar-header">
+	  <a href="{{url_for('index')}}" class="navbar-brand">SYSU</a>
+	  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#collapse">
+	      <span class="sr-only">Toggle Navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	  </button>
+	  </div>
+	  <div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="{{url_for('index')}}">首页</a></li>
+				<li><a href="{{url_for('list')}}">统计结果</a></li>
+			</ul>
+	  </div>
+	</div>
+	<div id="content">
+		{% block body %} {% endblock %}
+	</div>
+<footer style="text-align:center">2017 Copyright @ GSCFWID</footer>
+</body>
+</html>

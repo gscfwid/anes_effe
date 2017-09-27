@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container-fluid" style="background:white; padding-bottom:20px; margin-bottom:10px">
+<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12" style="background:white;">
+    <h2 class="page-header">登记项目</h2>
+    <form action="{{url_for('handle')}}" name="myform" onsubmit="return beforeSubmit();" method="post">
+        <div class="form-group">
+            <label for="username">姓名</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text" name="username" class="form-control" id="username" id="username" placeholder="请输入全名">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="start_num">开台次数</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="number"  name="start_num" class="form-control" id="start_num" id="start_num" placeholder="请输入开台次数">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="mana_time">管理时间(h)</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="number" step = 0.5 class="form-control" name="mana_time" id="mana_time" placeholder="请输入管理时间">
+            <!-- </div> -->
+        </div>
+		<div class="form-group">
+            <label for="beyond_time">超时时间(h)</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="number" step = 0.5 class="form-control" name="beyond_time" id="beyond_time" placeholder="请输入超时时间">
+            <!-- </div> -->
+        </div>
+		<div class="form-group">
+			<label for="grade">级别</label>
+			<select class="form-control" name="grade" id="grade">
+				<option>主麻</option>
+				<option>助手</option>
+			</select>
+        </div>
+		<div class="form-group">
+			<label for="assistant">助手级别</label>
+			<select class="form-control" name="assistant" id="assistant">
+				<option>无</option>
+				<option>本科医生/进修生</option>
+				<option>轮科医生/新研究生</option>
+			</select>
+		</div>
+        <div class="form-group" style="margin-left: 0;">
+            <div class="col-md-4  col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 col-lg-4 col-lg-offset-4">
+            <input type="submit" class="form-control btn-success" name="submit" value="提交" style="min-width:80px"></div>
+         </div>
+    </form>
+</div>
+</div>
+<script type="text/javascript">
+function beforeSubmit(){
+	if(myform.username.value==''){
+		alert('姓名不能为空!');
+		myform.username.focus();
+		return false;
+	}
+	if(myform.start_num.value==''){
+		alert('开台次数不能为空!');
+		myform.start_num.focus();
+		return false;
+	}
+	if(myform.mana_time.value==''){
+		alert('管理时间不能为空!');
+		myform.mana_time.focus();
+		return false;
+	}
+	if(myform.beyond_time.value==''){
+		alert('如未超时请填0!');
+		myform.beyond_time.focus();
+		return false;
+	}
+	else{
+        return confirm('确认提交?');
+    }
+}
+</script>
+{% endblock %}

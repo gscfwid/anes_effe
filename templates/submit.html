@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+	.p {
+		padding: 30px;
+		border: 1px solid #888;
+		margin: 20px;
+	}
+</style>
+<h3 style="text-align:center;margin-top:50px">提交成功，跳转中...</h1>
+<!-- <div id="list">
+	{% for item in posts %}
+		<div class="p">
+			<h4><a href="{{url_for('post', post_id=item['id'])}}">{{item['title']}}</a></h4>
+			<p>{{item['timestamp']}}</p>
+		</div>
+	{% endfor %}
+</div> -->
+<script type="text/javascript">
+setTimeout(function(){
+	location.href="{{url_for('index')}}";
+},1000);
+</script>
+{% endblock %}
